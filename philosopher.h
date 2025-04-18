@@ -6,12 +6,12 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:19:29 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:22:24 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:28:04 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#ifndef PHILOSOPHER_H
+# define PHILOSOPHER_H
 
 # include <limits.h>
 # include <pthread.h>

@@ -1,5 +1,5 @@
 
-NAME	= philo
+NAME	= philosopher
 CC		= gcc
 CFLAGS	= -Werror -Wall -Wextra -pthread
 
@@ -17,7 +17,7 @@ SRC_PATH = sources/
 OBJ_PATH = objects/
 SRC		=	main.c \
 			parsing.c \
-			grim_reaper.c \
+			condition_checker.c \
 			time.c \
 			philosopher.c \
 			init.c \
