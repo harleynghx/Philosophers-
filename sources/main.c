@@ -6,11 +6,11 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:14:57 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:55:25 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:58:24 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosopher.h>
+#include "../philosopher.h"
 
 static bool	start_simulation(t_table *table)
 {

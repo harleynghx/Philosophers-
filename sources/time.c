@@ -6,11 +6,11 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:18:37 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:21:12 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:59:08 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosopher.h>
+#include "../philosopher.h"
 
 time_t	get_time_in_ms(void)
 {

@@ -6,11 +6,11 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:13:52 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:21:06 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:58:49 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosopher.h>
+#include "../philosopher.h"
 
 static void	free_forks(t_table *table)
 {

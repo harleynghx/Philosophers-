@@ -6,11 +6,11 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:17:32 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:20:56 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:59:04 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosopher.h>
+#include "../philosopher.h"
 
 static void	eat_sleep_routine(t_philo *philo)
 {

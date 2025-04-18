@@ -6,11 +6,11 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:16:52 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:21:16 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:59:00 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosopher.h>
+#include "../philosopher.h"
 
 static bool	contains_only_digits(char *str)
 {
