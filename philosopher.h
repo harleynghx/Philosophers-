@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:19:29 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:28:04 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:26:18 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_table
 {
 	time_t				start_time;
 	unsigned int		nb_philos;
-	pthread_t			grim_reaper;
+	pthread_t			condition_state;
 	time_t				time_to_die;
 	time_t				time_to_eat;
 	time_t				time_to_sleep;
@@ -123,7 +123,7 @@ void					*error_null(char *str, char *details, t_table *table);
 int						msg(char *str, char *detail, int exit_no);
 
 //	grim_reaper.c
-void					*grim_reaper(void *data);
+void					*condition_checker(void *data);
 bool					has_simulation_stopped(t_table *table);
 
 //	exit.c

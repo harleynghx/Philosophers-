@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:17:32 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:59:04 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:03:36 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	*lone_philo_routine(t_philo *philo)
 }
 void	*philosopher(void *data)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)data;
 	if (philo->table->must_eat_count == 0)

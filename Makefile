@@ -20,7 +20,7 @@ SRC		=	main.c \
 			condition_checker.c \
 			time.c \
 			philosopher.c \
-			init.c \
+			initialize.c \
 			output.c \
 			exit.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))

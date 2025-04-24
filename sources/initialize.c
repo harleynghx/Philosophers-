@@ -6,24 +6,12 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:13:52 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:58:49 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/23 19:00:45 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosopher.h"
 
-static void	free_forks(t_table *table)
-{
-	unsigned int	i;
-
-	i = 0;
-	if (!table->fork_locks)
-		return ;
-	while (i < table->nb_philos)
-		pthread_mutex_destroy(&table->fork_locks[i++]);
-	free(table->fork_locks);
-	table->fork_locks = NULL;
-}
 static pthread_mutex_t	*init_forks(t_table *table)
 {
 	pthread_mutex_t	*forks;
@@ -36,16 +24,7 @@ static pthread_mutex_t	*init_forks(t_table *table)
 	while (i < table->nb_philos)
 	{
 		if (pthread_mutex_init(&forks[i], 0) != 0)
-		{
-			// Cleanup previously initialized mutexes
-			while (i > 0)
-			{
-				i--;
-				pthread_mutex_destroy(&forks[i]);
-			}
-			free(forks);
 			return (error_null(STR_ERR_MUTEX, NULL, 0));
-		}
 		i++;
 	}
 	return (forks);
@@ -56,16 +35,9 @@ static bool	init_global_mutexes(t_table *table)
 	if (!table->fork_locks)
 		return (false);
 	if (pthread_mutex_init(&table->sim_stop_lock, 0) != 0)
-	{
-		free_forks(table); // <- new cleanup
 		return (error_failure(STR_ERR_MUTEX, NULL, table));
-	}
 	if (pthread_mutex_init(&table->write_lock, 0) != 0)
-	{
-		pthread_mutex_destroy(&table->sim_stop_lock); // <- cleanup
-		free_forks(table);                            // <- cleanup
 		return (error_failure(STR_ERR_MUTEX, NULL, table));
-	}
 	return (true);
 }
 static void	assign_forks(t_philo *philo)

@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:11:28 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:58:43 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:25:43 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static bool	end_condition_reached(t_table *table)
 	return (false);
 }
 
-void	*grim_reaper(void *data)
+void	*condition_checker(void *data)
 {
 	t_table *table;
 
