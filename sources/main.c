@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:14:57 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 15:26:51 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:22:22 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static bool	start_simulation(t_table *table)
 {
 	unsigned int	i;
 
-	table->start_time = get_time_in_ms() + (table->nb_philos * 2 * 10);
+	table->start_time = get_time_in_ms() + (table->nb_philos * 20);
 	i = 0;
 	while (i < table->nb_philos)
 	{
