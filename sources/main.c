@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:14:57 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 16:22:22 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:51:04 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool	start_simulation(t_table *table)
 	}
 	if (table->nb_philos > 1)
 	{
-		if (pthread_create(&table->condition_state, NULL, &condition_checker, table) != 0)
+		if (pthread_create(&table->monitoring_thread, NULL, &condition_checker, table) != 0)
 			return (error_failure(STR_ERR_THREAD, NULL, table));
 	}
 	return (true);
@@ -43,7 +43,7 @@ static void	stop_simulation(t_table *table)
 		i++;
 	}
 	if (table->nb_philos > 1)
-		pthread_join(table->condition_state, NULL);
+		pthread_join(table->monitoring_thread, NULL);
 	if (DEBUG_FORMATTING == true && table->must_eat_count != -1)
 		write_outcome(table);
 	destroy_mutexes(table);

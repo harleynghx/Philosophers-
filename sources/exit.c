@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:12:40 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:58:46 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 21:48:53 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	destroy_mutexes(t_table *table)
 	while (i < table->nb_philos)
 	{
 		pthread_mutex_destroy(&table->fork_locks[i]);
-		pthread_mutex_destroy(&table->philos[i]->meal_time_lock);
+		pthread_mutex_destroy(&table->philos[i]->last_meal_lock);
 		i++;
 	}
 	pthread_mutex_destroy(&table->write_lock);

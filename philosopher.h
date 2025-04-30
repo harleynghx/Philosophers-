@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:19:29 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 15:26:18 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 21:46:25 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_table
 {
 	time_t				start_time;
 	unsigned int		nb_philos;
-	pthread_t			condition_state;
+	pthread_t			monitoring_thread;
 	time_t				time_to_die;
 	time_t				time_to_eat;
 	time_t				time_to_sleep;
@@ -81,7 +81,7 @@ typedef struct s_philo
 	unsigned int		id;
 	unsigned int		times_ate;
 	unsigned int		fork[2];
-	pthread_mutex_t		meal_time_lock;
+	pthread_mutex_t		last_meal_lock;
 	time_t				last_meal;
 	t_table				*table;
 }						t_philo;

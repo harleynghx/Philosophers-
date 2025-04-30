@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:13:52 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/23 19:00:45 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 21:47:02 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static t_philo	**init_philosophers(t_table *table)
 		philos[i] = malloc(sizeof(t_philo) * 1);
 		if (!philos[i])
 			return (error_null(STR_ERR_MALLOC, NULL, 0));
-		if (pthread_mutex_init(&philos[i]->meal_time_lock, 0) != 0)
+		if (pthread_mutex_init(&philos[i]->last_meal_lock, 0) != 0)
 			return (error_null(STR_ERR_MUTEX, NULL, 0));
 		philos[i]->table = table;
 		philos[i]->id = i;

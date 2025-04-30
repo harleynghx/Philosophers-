@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:11:28 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 15:25:43 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/04/24 21:48:33 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static bool	kill_philo(t_philo *philo)
 	{
 		set_sim_stop_flag(philo->table, true);
 		write_status(philo, true, DIED);
-		pthread_mutex_unlock(&philo->meal_time_lock);
+		pthread_mutex_unlock(&philo->last_meal_lock);
 		return (true);
 	}
 	return (false);
@@ -55,13 +55,13 @@ static bool	end_condition_reached(t_table *table)
 	i = 0;
 	while (i < table->nb_philos)
 	{
-		pthread_mutex_lock(&table->philos[i]->meal_time_lock);
+		pthread_mutex_lock(&table->philos[i]->last_meal_lock);
 		if (kill_philo(table->philos[i]))
 			return (true);
 		if (table->must_eat_count != -1)
 			if (table->philos[i]->times_ate < (unsigned int)table->must_eat_count)
 				all_ate_enough = false;
-		pthread_mutex_unlock(&table->philos[i]->meal_time_lock);
+		pthread_mutex_unlock(&table->philos[i]->last_meal_lock);
 		i++;
 	}
 	if (table->must_eat_count != -1 && all_ate_enough == true)
