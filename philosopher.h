@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:19:29 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 21:46:25 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 07:49:24 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void					*philosopher(void *data);
 //	time.c
 time_t					get_time_in_ms(void);
 void					philo_sleep(t_table *table, time_t sleep_time);
-void					sim_start_delay(time_t start_time);
+void					thread_sync(time_t start_time);
 
 //	output.c
 void					write_status(t_philo *philo, bool reaper,

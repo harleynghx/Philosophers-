@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:17:32 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 21:46:36 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 07:49:09 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	*philosopher(void *data)
 	pthread_mutex_lock(&philo->last_meal_lock);
 	philo->last_meal = philo->table->start_time;
 	pthread_mutex_unlock(&philo->last_meal_lock);
-	sim_start_delay(philo->table->start_time);
+	thread_sync(philo->table->start_time);
 	if (philo->table->time_to_die == 0)
 		return (NULL);
 	if (philo->table->nb_philos == 1)

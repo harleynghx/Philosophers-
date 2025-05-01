@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:11:28 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 21:48:33 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 07:49:55 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	*condition_checker(void *data)
 	if (table->must_eat_count == 0)
 		return (NULL);
 	set_sim_stop_flag(table, false);
-	sim_start_delay(table->start_time);
+	thread_sync(table->start_time);
 	while (true)
 	{
 		if (end_condition_reached(table) == true)
