@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:18:37 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/18 16:59:08 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:13:08 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,20 @@ void	philo_sleep(t_table *table, time_t sleep_time)
 		usleep(100);
 	}
 }
+
 void	sim_start_delay(time_t start_time)
 {
+	long	remaining;
+
+	while ((remaining = start_time - get_time_in_ms()) > 1)
+	{
+		usleep(remaining / 2);
+	}
 	while (get_time_in_ms() < start_time)
-		continue ;
+		;
 }
+// void	sim_start_delay(time_t start_time)
+// {
+// 	while (get_time_in_ms() < start_time)
+// 		continue ;
+// }
