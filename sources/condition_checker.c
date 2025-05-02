@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:11:28 by harleyng          #+#    #+#             */
-/*   Updated: 2025/05/02 07:49:55 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:17:25 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static bool	end_condition_reached(t_table *table)
 	return (false);
 }
 
-void	*condition_checker(void *data)
+void	*monitor_thread(void *data)
 {
 	t_table *table;
 

@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:14:57 by harleyng          #+#    #+#             */
-/*   Updated: 2025/04/24 20:51:04 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:19:16 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool	start_simulation(t_table *table)
 	}
 	if (table->nb_philos > 1)
 	{
-		if (pthread_create(&table->monitoring_thread, NULL, &condition_checker, table) != 0)
+		if (pthread_create(&table->monitoring_thread, NULL, &monitor_thread, table) != 0)
 			return (error_failure(STR_ERR_THREAD, NULL, table));
 	}
 	return (true);

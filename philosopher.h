@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:19:29 by harleyng          #+#    #+#             */
-/*   Updated: 2025/05/02 07:49:24 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:19:04 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void					*error_null(char *str, char *details, t_table *table);
 int						msg(char *str, char *detail, int exit_no);
 
 //	grim_reaper.c
-void					*condition_checker(void *data);
+void					*monitor_thread(void *data);
 bool					has_simulation_stopped(t_table *table);
 
 //	exit.c
