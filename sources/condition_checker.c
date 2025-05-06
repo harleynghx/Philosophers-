@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:11:28 by harleyng          #+#    #+#             */
-/*   Updated: 2025/05/02 14:17:25 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:45:18 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	*monitor_thread(void *data)
 	table = (t_table *)data;
 	if (table->must_eat_count == 0)
 		return (NULL);
-	set_sim_stop_flag(table, false);
+	// set_sim_stop_flag(table, false);
 	thread_sync(table->start_time);
 	while (true)
 	{

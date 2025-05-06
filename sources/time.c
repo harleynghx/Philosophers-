@@ -6,7 +6,7 @@
 /*   By: harleyng <harleyng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 16:18:37 by harleyng          #+#    #+#             */
-/*   Updated: 2025/05/02 07:48:59 by harleyng         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:46:41 by harleyng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,3 @@ void	thread_sync(time_t start_time)
 	while (get_time_in_ms() < start_time)
 		;
 }
-// void	sim_start_delay(time_t start_time)
-// {
-// 	while (get_time_in_ms() < start_time)
-// 		continue ;
-// }
